@@ -9,8 +9,8 @@ keys:
     - ~/.ssh/id_rsa
 
 folders:
-    - map: ~/Code
-      to: /home/vagrant/Code
+    - map: ~/upressvm
+      to: /var/upressvm
 
 sites:
     - map: homestead.app
