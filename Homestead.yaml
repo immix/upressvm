@@ -1,0 +1,58 @@
+---
+ip: "192.168.10.10"
+memory: 2048
+cpus: 1
+
+authorize: ~/.ssh/id_rsa.pub
+
+keys:
+    - ~/.ssh/id_rsa
+
+folders:
+<<<<<<< HEAD
+    - map: ~/extremeedge
+      to: /var/www/extremeedge
+    - map: ~/rimkus
+      to: /var/www/rimkus
+    - map: ~/ams
+      to: /var/www/ams
+    - map: ~/crc
+      to: /var/www/crc
+    - map: ~/wilson
+      to: /var/www/wilson
+
+sites:
+    - map: extremeedge.app
+      to: /var/www/extremeedge
+    - map: rimkus.app
+      to: /var/www/rimkus
+    - map: ams.app
+      to: /var/www/ams
+    - map: crc.app
+      to: /var/www/crc
+    - map: wilson.app
+      to: /var/www/wilson
+      
+variables:
+    - key: APP_ENV
+      value: local
+
+crontabs:
+    - command: 'some command'
+      minute: '*/30'
+      hour: '*'
+      monthday: '*'
+      week: '*'
+      weekday: '*'
+=======
+    - map: ~/upressvm
+      to: /var/upressvm
+
+sites:
+    - map: homestead.app
+      to: /home/vagrant/Code/Laravel/public
+
+variables:
+    - key: APP_ENV
+      value: local
+>>>>>>> 602ef63e64cf8fd9ae27900ac78995607d798640
