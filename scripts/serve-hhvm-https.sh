@@ -34,12 +34,12 @@ block="server {
     sendfile off;
 
     location ~ \.php$ {
-        fastcgi_param HTTPS on;  
+        fastcgi_param HTTPS on; 
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_pass 127.0.0.1:9000;
         fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME \$document_root$fastcgi_script_name;
         include fastcgi_params;
-        fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
         fastcgi_intercept_errors on;
         fastcgi_buffer_size 16k;
         fastcgi_buffers 4 16k;
@@ -64,7 +64,8 @@ openssl req \
     -out /etc/nginx/ssl/$1.crt \
     2> /dev/null
 
-echo "$block" > "/etc/nginx/sites-available/$1_https"
-ln -fs "/etc/nginx/sites-available/$1_https" "/etc/nginx/sites-enabled/$1_https"
+echo "$block" > "/etc/nginx/sites-available/https_$1"
+ln -fs "/etc/nginx/sites-available/https_$1" "/etc/nginx/sites-enabled/https_$1"
 service nginx restart
 service php5-fpm restart
+service hhvm restart

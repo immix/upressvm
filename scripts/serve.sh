@@ -5,7 +5,7 @@ block="server {
     server_name $1;
     root $2;
 
-    index index.html index.htm index.php;
+    index index.php;
 
     charset utf-8;
 
@@ -15,6 +15,7 @@ block="server {
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location = /robots.txt  { access_log off; log_not_found off; }
+    location = /sitemap.xml { access_log off; log_not_found off; }
 
     access_log off;
     error_log  /var/log/nginx/$1-error.log error;
@@ -28,13 +29,6 @@ block="server {
         fastcgi_pass unix:/var/run/php5-fpm.sock;
         fastcgi_index index.php;
         include fastcgi_params;
-<<<<<<< HEAD
-        fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
-        fastcgi_intercept_errors on;
-        fastcgi_buffer_size 16k;
-        fastcgi_buffers 4 16k;
-=======
->>>>>>> 602ef63e64cf8fd9ae27900ac78995607d798640
     }
 
     location ~ /\.ht {

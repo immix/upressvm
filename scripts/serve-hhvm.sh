@@ -5,7 +5,7 @@ block="server {
     server_name $1;
     root $2;
 
-    index index.html index.htm index.php;
+    index index.php;
 
     charset utf-8;
 
@@ -41,8 +41,4 @@ echo "$block" > "/etc/nginx/sites-available/$1"
 ln -fs "/etc/nginx/sites-available/$1" "/etc/nginx/sites-enabled/$1"
 service nginx restart
 service php5-fpm restart
-<<<<<<< HEAD
 service hhvm restart
-=======
-service hhvm restart
->>>>>>> 602ef63e64cf8fd9ae27900ac78995607d798640
