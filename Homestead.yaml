@@ -11,10 +11,22 @@ keys:
 folders:
     - map: ~/ams
       to: /var/ams
+    - map: ~/wilson
+      to: /var/wilson
+    - map: ~/crc
+      to: /var/crc
+    - map: ~/hendee
+      to: /var/hendee
 
 sites:
     - map: ams.app
       to: /var/ams/
+    - map: wilson.app
+      to: /var/wilson/
+    - map: crc.app
+      to: /var/crc/
+    - map: hendee.app
+      to: /var/hendee/
       
 
       

@@ -12,7 +12,7 @@ composer self-update
 
 cd /tmp
 wget http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz
-tar xfz ioncube_loaders_lin_x86-64.tar.gz
+tar xfvz ioncube_loaders_lin_x86-64.tar.gz
 
 # Copy .screenrc to vagrant's home folder
 cp /vagrant/.screenrc /home/vagrant
